@@ -18,11 +18,11 @@ makedocs(;
   doctest = true,
   linkcheck = false, # Rely on Lint.yml/lychee for the links
   authors = "Abel Soares Siqueira <abel.s.siqueira@gmail.com> and contributors",
-  repo = "https://github.com/abelsiqueira/BestieMinimum.jl/blob/{commit}{path}#{line}",
+  repo = "https://github.com/JuliaBesties/BestieMinimum.jl/blob/{commit}{path}#{line}",
   sitename = "BestieMinimum.jl",
   format = Documenter.HTML(;
     prettyurls = true,
-    canonical = "https://abelsiqueira.github.io/BestieMinimum.jl",
+    canonical = "https://JuliaBesties.github.io/BestieMinimum.jl",
     assets = ["assets/style.css"],
   ),
   pages = [
@@ -34,4 +34,4 @@ makedocs(;
   ],
 )
 
-deploydocs(; repo = "github.com/abelsiqueira/BestieMinimum.jl", push_preview = true)
+deploydocs(; repo = "github.com/JuliaBesties/BestieMinimum.jl", push_preview = true)
