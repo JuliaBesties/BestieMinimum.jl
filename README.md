@@ -11,6 +11,7 @@
 [![DOI](https://zenodo.org/badge/DOI/FIXME)](https://doi.org/FIXME)
 
 
+[![BestieTemplate](https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/JuliaBesties/BestieTemplate.jl/main/docs/src/assets/badge.json)](https://github.com/JuliaBesties/BestieTemplate.jl)
 
 ## How to Cite
 
