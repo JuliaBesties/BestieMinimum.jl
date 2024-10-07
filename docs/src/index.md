@@ -4,6 +4,6 @@ CurrentModule = BestieMinimum
 
 # BestieMinimum
 
-Documentation for [BestieMinimum](https://github.com/abelsiqueira/BestieMinimum.jl).
+Documentation for [BestieMinimum](https://github.com/JuliaBesties/BestieMinimum.jl).
 
 
