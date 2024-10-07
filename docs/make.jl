@@ -4,34 +4,18 @@ using Documenter
 DocMeta.setdocmeta!(BestieMinimum, :DocTestSetup, :(using BestieMinimum); recursive = true)
 
 const page_rename = Dict("developer.md" => "Developer docs") # Without the numbers
-
-function nice_name(file)
-  file = replace(file, r"^[0-9]*-" => "")
-  if haskey(page_rename, file)
-    return page_rename[file]
-  end
-  return splitext(file)[1] |> x -> replace(x, "-" => " ") |> titlecase
-end
+const numbered_pages = [
+  file for
+  file in readdir(joinpath(@__DIR__, "src")) if file != "index.md" && splitext(file)[2] == ".md"
+]
 
 makedocs(;
-  modules = [BestieMinimum],
-  doctest = true,
-  linkcheck = false, # Rely on Lint.yml/lychee for the links
-  authors = "Abel Soares Siqueira <abel.s.siqueira@gmail.com> and contributors",
-  repo = "https://github.com/abelsiqueira/BestieMinimum.jl/blob/{commit}{path}#{line}",
-  sitename = "BestieMinimum.jl",
-  format = Documenter.HTML(;
-    prettyurls = true,
-    canonical = "https://abelsiqueira.github.io/BestieMinimum.jl",
-    assets = ["assets/style.css"],
-  ),
-  pages = [
-    "Home" => "index.md"
-    [
-      nice_name(file) => file for
-      file in readdir(joinpath(@__DIR__, "src")) if file != "index.md" && splitext(file)[2] == ".md"
-    ]
-  ],
+    modules = [BestieMinimum],
+    authors = "Abel Soares Siqueira <abel.s.siqueira@gmail.com> and contributors",
+    repo = "https://github.com/abelsiqueira/BestieMinimum.jl/blob/{commit}{path}#{line}",
+    sitename = "BestieMinimum.jl",
+    format = Documenter.HTML(; canonical = "https://abelsiqueira.github.io/BestieMinimum.jl"),
+    pages = ["index.md"; numbered_pages],
 )
 
-deploydocs(; repo = "github.com/abelsiqueira/BestieMinimum.jl", push_preview = true)
+deploydocs(; repo = "github.com/abelsiqueira/BestieMinimum.jl")
