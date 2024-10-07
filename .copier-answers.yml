@@ -9,4 +9,4 @@ PackageName: BestieMinimum
 PackageOwner: abelsiqueira
 PackageUUID: 911d942b-976d-5ead-b2b6-c499ef4f1d7c
 _commit: v0.8.0
-_src_path: https://github.com/abelsiqueira/BestieTemplate.jl
+_src_path: https://github.com/JuliaBesties/BestieTemplate.jl
